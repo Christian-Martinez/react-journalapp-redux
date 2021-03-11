@@ -9,6 +9,24 @@ export const startLoginEmailPassword = (email, password) => {
   };
 };
 
+export const startRegisterWithEmailPasswordName = (email, password, name) => {
+  return (dispatch) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(async ({ user }) => {
+        console.log(user);
+        await user.updateProfile({ displayName: name });
+        //envia al login
+        dispatch(login(user.uid, user.displayName));
+      })
+      .catch((e) => {
+        console.log(e);
+        // Swal.fire('Error', e.message, 'error');
+      });
+  };
+};
+
 export const startGoogleLogin = () => {
   return (dispatch) => {
     firebase
