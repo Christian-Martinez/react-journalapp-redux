@@ -9,6 +9,7 @@ export const Sidebar = () => {
   const dispatch = useDispatch();
 
   const { name } = useSelector((state) => state.auth);
+  console.log('name', name);
 
   const hanleLogout = () => {
     dispatch(startLogout());
@@ -23,7 +24,7 @@ export const Sidebar = () => {
       <div className='journal__sidebar-navbar'>
         <h3 className='mt-5'>
           <i className='far fa-moon'></i>
-          <span>{name}</span>
+          <span> {name}</span>
         </h3>
 
         <button className='btn' onClick={hanleLogout}>

@@ -4,6 +4,7 @@ import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { finishLoading, startLoading } from './ui';
 
 export const startLoginEmailPassword = (email, password) => {
+  // thunk proporciona el dispatch
   return (dispatch) => {
     dispatch(startLoading());
     firebase

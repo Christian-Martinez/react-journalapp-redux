@@ -8,14 +8,14 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
   const dispatch = useDispatch();
 
   const handleEntryClick = () => {
-    /* dispatch(
+    dispatch(
       activeNote(id, {
         date,
         title,
         body,
         url,
       })
-    ); */
+    );
   };
 
   return (

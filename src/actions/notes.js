@@ -6,6 +6,7 @@ import { loadNotes } from '../helpers/loadNotes';
 // import { fileUpload } from '../helpers/fileUpload';
 
 export const startNewNote = () => {
+  //el getstate es igual al useSelector
   return async (dispatch, getState) => {
     const { uid } = getState().auth;
 
@@ -32,6 +33,7 @@ export const activeNote = (id, note) => ({
 });
 
 export const startLoadingNotes = (uid) => {
+  //las acciones deben de hacer los trabajos mas pesados
   return async (dispatch) => {
     const notes = await loadNotes(uid);
     dispatch(setNotes(notes));

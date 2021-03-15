@@ -21,7 +21,8 @@ export const AppRouter = () => {
       if (user?.uid) {
         dispatch(login(user.uid, user.displayName));
         setIsLoggedIn(true);
-
+        //carga las notas
+        //las acciones deben de hacer los trabajos mas pesados
         dispatch(startLoadingNotes(user.uid));
       } else {
         setIsLoggedIn(false);
